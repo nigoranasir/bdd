@@ -1,0 +1,26 @@
+Feature: Reports
+
+Background: User Logs in
+    Given User is on login page
+    When User enters valid username
+    And User enters valid password
+    And User click on login button
+    
+Scenario: Verify user can export specific account statement
+    When User clicks on Reports side menu
+    And the user clicks on the export icon
+    Then "EBANQ Specific Account Statement" is exported as csv file
+
+
+Scenario: Verify user can export all accounts transactions
+    When User clicks on Reports side menu
+    And the user clicks on tab "All Accounts Transactions"
+    And the user clicks on the export icon
+    Then "EBANQ All Accounts Transactions" is exported as csv file
+
+
+Scenario: Verify user can export all accounts balances
+    When User clicks on Reports side menu
+    And the user clicks on tab "All Accounts Balances"
+    And the user clicks on the export icon
+    Then "EBANQ All Accounts Balances" is exported as csv file
